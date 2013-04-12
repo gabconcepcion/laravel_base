@@ -1,57 +1,102 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Laravel: A Framework For Web Artisans</title>
-	<meta name="viewport" content="width=device-width">
-	{{ HTML::style('laravel/css/style.css') }}
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<h1>Laravel</h1>
-			<h2>A Framework For Web Artisans</h2>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-			<p class="intro-text" style="margin-top: 45px;">
-			</p>
-		</header>
-		<div role="main" class="main">
-			<div class="home">
-				<h2>Learn the terrain.</h2>
+    {{ Asset::styles(); }}
+    <!-- Le styles -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
 
-				<p>
-					You've landed yourself on our default home page. The route that
-					is generating this page lives at:
-				</p>
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+  </head>
 
-				<pre>{{ path('app') }}routes.php</pre>
+  <body>
 
-				<p>And the view sitting before you can be found at:</p>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            @if(!Auth::guest())
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+            @endif
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-				<pre>{{ path('app') }}views/home/index.blade.php</pre>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
 
-				<h2>Grow in knowledge.</h2>
+      <hr>
 
-				<p>
-					Learning to use Laravel is amazingly simple thanks to
-					its {{ HTML::link('docs', 'wonderful documentation') }}.
-				</p>
+      <footer>
+        <p>&copy; MobileTambayan.com 2013</p>
+      </footer>
 
-				<h2>Create something beautiful.</h2>
-
-				<p>
-					Now that you're up and running, it's time to start creating!
-					Here are some links to help you get started:
-				</p>
-
-				<ul class="out-links">
-					<li><a href="http://laravel.com">Official Website</a></li>
-					<li><a href="http://forums.laravel.com">Laravel Forums</a></li>
-					<li><a href="http://github.com/laravel/laravel">GitHub Repository</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</body>
+    </div><!--/.fluid-container-->
+    {{ Asset::scripts() }}
+  </body>
 </html>
